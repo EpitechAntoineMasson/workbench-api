@@ -1,0 +1,122 @@
+Images Items : https://render.albiononline.com/v1/item/T8_ARMOR_LEATHER_HELL@3.png?quality=5
+Idées:
+
+Idée en cours : Formulaire de candidature
+
+Idées             Priorité
+- KillBot ?       1
+- Party maker ?   0 (!report <name>) -> signaler l'absence d'un joueur
+- Channel members 2 Un channel qui dans son nom indique le nombre de joueurs sur le serveur
+- GUI paramétrage 3 Application Next.js / React.js
+
+Architecture:
+
+> config
+  - database.js
+  - client.js
+  - config.json
+> src
+  - index.js
+  > commands
+    - index.js
+    > candidate
+      - index.js
+  > models
+    - index.js
+    - Question.js
+  > controllers
+    - index.js
+    - QuestionController.js
+
+!edit name description ....
+
+[Commands]:
+Questions:
+- !add <keyword>
+- !edit <keyword> <field> <value>
+- !remove <keyword>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bot Discord - [....................] 0%
+
+  - Paramétrer le Bot
+    Profil guilde
+    Liste des channel accessibles
+    Profils interaction
+
+  - Pouvoir créer des formulaires qui seront soumis aux candidats pour intégrer une guilde
+    1 seul formulaire
+    Controller - CRUD Questions
+      getAllQuestions
+      getQuestion
+      postQuestion
+      patchQuestion
+      deleteQuestion
+    Model - Squelette Question
+      guild_id - id de la guilde Discord
+      keyword - id unique à la guilde
+      required - si la question est obligatoire ou non
+      title - la question
+      description - description de la question
+      picture - Si l input doit être une image ou non
+      order - ordre d apparition dans le formulaire

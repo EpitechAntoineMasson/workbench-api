@@ -14,8 +14,22 @@ const createClient = async client => {
   }
 };
 
+const getClientByGuild = async guild => {
+  try {
+    const client = await ClientModel.findOne({ guild_id: guild.id }).exec();
+
+    if (!client) logger.error(`[GET] client: No client found for guild ${guild.name}`);
+    else return client._doc;
+
+    return null;
+  } catch(err) {
+    logger.error(err);
+  }
+};
+
 const ClientController = {
   createClient,
+  getClientByGuild,
 }
 
 export default ClientController;
