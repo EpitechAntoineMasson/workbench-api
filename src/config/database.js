@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 import { logger } from '../utils';
-import { database_url } from '../../../config.json';
+import { database_url } from '../../config.json';
 
 mongoose.connect(database_url)
   .catch(error => logger.error(error));
-const db = mongoose.connection;
+const database = mongoose.connection;
 
-db.once('open', () => {
+database.once('open', () => {
   logger.info('[Server]: Database successfully connected');
 });
 
-export default db;
+export default database;

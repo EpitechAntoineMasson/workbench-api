@@ -23,20 +23,10 @@ Architecture:
       - index.js
   > models
     - index.js
-    - Question.js
   > controllers
     - index.js
-    - QuestionController.js
 
-!edit name description ....
-
-[Commands]:
-Questions:
-- !add <keyword>
-- !edit <keyword> <field> <value>
-- !remove <keyword>
-
-
+Pour chaque guilde rejointe, le bot va créer un Client
 
 
 
