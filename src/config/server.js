@@ -13,10 +13,15 @@ global.api_url = process.env.VIRTUAL_HOST
   : `http://localhost:${global.port}/doc`;
 
 const app = express();
-http.createServer(app).listen(global.port);
-logger.info(`[Server]: Listening at ${global.api_url}`);
+
+app.use('*', cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 require('./swagger').default(app);
 logger.info(`[Server]: Documentation available at ${global.doc_url}`);
+
+http.createServer(app).listen(global.port);
+logger.info(`[Server]: Listening at ${global.api_url}`);
 
 routes(app);
