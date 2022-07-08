@@ -1,5 +1,7 @@
 import express from 'express';
 import http from 'http';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 import { logger } from '../utils';
 import routes from '../api/routes/index';
