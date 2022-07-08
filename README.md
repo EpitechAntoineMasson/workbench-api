@@ -1,4 +1,4 @@
-# Nodejs FES Template
+# WIP : workbench
 
 <!-- # Environment vars
 This project uses the following environment variables:
