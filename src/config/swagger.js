@@ -1,7 +1,10 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
 
-import { Guild } from '../api/models/Guild';
+import swaggerSchemas from '../api/models/swaggerSchemas';
+
+/* import { Guild } from '../api/models/Guild';
+import { User } from '../api/models/User'; */
 
 const options = {
   swaggerDefinition: {
@@ -12,13 +15,9 @@ const options = {
     basePath: '/',
     host: global.api_url,
     components: {
-      schemas: {
-        Guild,
-      }
+      schemas: swaggerSchemas,
     }
   },
-  produces: ['application/json'],
-  consumes: ['application/json'],
   apis: ['dist/api/routes/*.js', 'dist/utils/responses.js']
 };
 const swaggerSpec = swaggerJSDoc(options);

@@ -1,5 +1,7 @@
 import express from 'express';
 import http from 'http';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 import { logger } from '../utils';
 import routes from '../api/routes/index';
@@ -18,10 +20,9 @@ app.use('*', cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-require('./swagger').default(app);
-logger.info(`[Server]: Documentation available at ${global.doc_url}`);
-
 http.createServer(app).listen(global.port);
 logger.info(`[Server]: Listening at ${global.api_url}`);
+require('./swagger').default(app);
+logger.info(`[Server]: Documentation available at ${global.doc_url}`);
 
 routes(app);

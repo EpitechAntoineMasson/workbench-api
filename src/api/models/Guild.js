@@ -1,13 +1,8 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose from 'mongoose';
 import mongooseUniqueValidator from 'mongoose-unique-validator';
 import m2s from 'mongoose-to-swagger'
 
-const GuildSchema = new Schema({
-  guild_id: String,
-  guild_name: String,
-  prefix: String,
-  join_date: Date,
-});
+import { GuildSchema } from './schemas';
 
 GuildSchema.plugin(mongooseUniqueValidator);
 
