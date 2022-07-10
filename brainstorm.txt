@@ -9,7 +9,7 @@ Idées             ## Priorité
 - GUI paramétrage ## 3 Application Next.js / React.js
 
 TODO:
-- REDME.md file
+- README.md file
 - middleware
 - JWT authentication + rôle
 
