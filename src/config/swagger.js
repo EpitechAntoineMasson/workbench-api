@@ -10,7 +10,7 @@ const options = {
   swaggerDefinition: {
     info: {
       title: 'Workbench',
-      version: '2.0.0'
+      version: '2.1.0'
     },
     basePath: '/',
     host: global.api_url,
