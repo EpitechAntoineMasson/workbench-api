@@ -1,7 +1,7 @@
 import express from 'express';
 import routes from 'require-dir';
 
-import { logger } from '../../utils';
+import { logger } from '../utils';
 
 export default app => {
   Object.keys(routes()).forEach(endpoint => {

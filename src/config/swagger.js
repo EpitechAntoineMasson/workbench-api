@@ -1,10 +1,7 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUI from 'swagger-ui-express';
 
-import swaggerSchemas from '../api/models/swaggerSchemas';
-
-/* import { Guild } from '../api/models/Guild';
-import { User } from '../api/models/User'; */
+import swaggerSchemas from '../models/swaggerSchemas';
 
 const options = {
   swaggerDefinition: {

@@ -3,8 +3,8 @@ import http from 'http';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
+import routes from '../routes/index';
 import { logger } from '../utils';
-import routes from '../api/routes/index';
 
 global.port = process.env.VIRTUAL_PORT || 8080
 global.api_url = process.env.VIRTUAL_HOST

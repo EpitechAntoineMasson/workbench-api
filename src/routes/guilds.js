@@ -1,12 +1,11 @@
-import logger from '../../utils/logger';
 import { GuildModel } from '../models';
-import { Response } from '../../utils';
+import { logger, Response } from '../utils';
 
 /*
  *  Guilds route : /guild
  *  GET     - /     - return all guilds
  *  GET     - /:id  - return the requested guild
- *  POST    - /     - create a quild
+ *  POST    - /     - create a guild
  *  PUT     - /:id  - update the requested guild
  *  DELETE  - /:id  - delete requested guild
 */
@@ -18,7 +17,7 @@ import { Response } from '../../utils';
  *     get:
  *       description: Get all guilds.
  *       operationId: getGuilds
- *       summary: Get all guilds informations.
+ *       summary: Get all guilds' informations.
  *       tags:
  *         - guilds
  *       responses:
@@ -38,7 +37,7 @@ const getGuilds = async ( req, res, next ) => {
     return Response.sendPayload(res, 200, guilds);
   } catch (err) {
     logger.error(err);
-    return next(error);
+    return next(err);
   }
 };
 
@@ -116,7 +115,7 @@ const createGuild = async ( req, res, next ) => {
     return Response.sendCreated(res, 'guild');
   } catch (err) {
     logger.error(err);
-    return next(error);
+    return next(err);
   }
 };
 
